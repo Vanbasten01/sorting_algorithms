@@ -15,7 +15,6 @@ unsigned int _lomuto(int *arr, int low, int high, size_t size)
 
 
 	pivot = arr[high];
-	i = low;
 	current = low - 1;
 
 	for (i = low; i <=  high; i++)
@@ -46,7 +45,7 @@ void quicksort(int *array, int low, int high, size_t size)
 
 	if (low < high)
 	{
-		pivot_idx = _lomuto(array, 0, high, size);
+		pivot_idx = _lomuto(array, low, high, size);
 		if (pivot_idx > 0)
 			quicksort(array, low, pivot_idx - 1, size);
 		quicksort(array, pivot_idx + 1, high, size);
@@ -62,6 +61,8 @@ void quicksort(int *array, int low, int high, size_t size)
  */
 void quick_sort(int *array, size_t size)
 {
+	if (!array || size == 0)
+		return;
 	quicksort(array, 0, size - 1, size);
 }
 /**
