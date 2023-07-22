@@ -3,8 +3,8 @@
  *_lomuto - a function to do the partition of the array
  *using lomuto partition algorithm.
  *@arr: the array to be partitioned.
- *@low: the index of the first element of the array's part to be sorted.
- *@high: the index of the last  element of the array's part to be sorted.
+ *@low: the index of the first element of the array's part to be partitioned.
+ *@high: the index of the last  element of the array's part to be partitioned.
  *@size: the size of the whole array.
  *Return: the index of the pivot.
  */
