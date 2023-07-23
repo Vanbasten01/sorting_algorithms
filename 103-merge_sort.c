@@ -48,12 +48,12 @@ void merge(int *left, int *right, int *store, int nl, int nr)
  * @arr: the array to sort
  * @size: the size of the array
  */
-void merge_sort(int *arr, int size)
+void merge_sort(int *arr, size_t size)
 {
-	int mid = size / 2;
+	size_t mid = size / 2;
 	int *sides[] = { NULL, NULL };
-	int tmp;
-	int l;
+	size_t tmp;
+	size_t l;
 
 	if (size <= 1)
 		return;
