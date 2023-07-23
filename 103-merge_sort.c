@@ -39,7 +39,7 @@ void merge(int *left, int *right, int *store, int nl, int nr)
 	print_array(left, nl);
 	printf("[right]: ");
 	print_array(right, nr);
-	printf("[done]: ");
+	printf("[Done]: ");
 	print_array(store, nl + nr);
 }
 
