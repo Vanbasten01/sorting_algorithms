@@ -30,7 +30,7 @@ void heap_sort(int *array, size_t size)
 	for (i = (int)size / 2 - 1; i >= 0; i--)
 		heapfy(array, size, i, array_size);
 
-	for (i = size - 1; i >= 0; i--)
+	for (i = size - 1; i >= 1; i--)
 	{
 		swap(&array[i], &array[0]);
 		print_array(array, array_size);
