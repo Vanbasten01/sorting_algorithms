@@ -36,5 +36,6 @@ void heap_sort(int *array, size_t size);
 void heapfy(int *array, size_t size, int i, size_t array_size);
 void radix_sort(int *array, size_t size);
 void countsort(int *array, size_t size, int exp);
+int size_counter(listint_t **head);
 
 #endif

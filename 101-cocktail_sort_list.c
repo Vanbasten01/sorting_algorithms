@@ -1,29 +1,22 @@
 #include "sort.h"
 /**
- *
- *
- *
- *
+ *cocktail_sort_list - a function that sorts a doubly linked list
+ *using the Cocktail Sort algorithm.
+ *@list: the doubly linked list to be sorted.
+ *Return: void
  */
 void cocktail_sort_list(listint_t **list)
 {
 	listint_t *tmp;
-	int count = 1, end = 0, start = 0, holder;
+	int count = 1, end = 0, start = 0, i;
 
 	if (!list)
 		return;
+	end = size_counter(list);
 	tmp = *list;
-	while (tmp->next)
-	{
-		tmp = tmp->next;
-		end++;
-	}
-	tmp = *list;
-	holder = end;
 	while (count == 1)
 	{
-		end = holder;
-		while (end > start)
+		for (i = end ; i > start; i--)
 		{
 			if (tmp->n > tmp->next->n)
 			{
@@ -33,11 +26,9 @@ void cocktail_sort_list(listint_t **list)
 			}
 			else
 				tmp = tmp->next;
-			end--;		
 		}
 		count = 0;
-		end = holder;
-		while (end > start)
+		for (i = end; i > start; i--)
 		{
 			if (tmp->n < tmp->prev->n)
 			{
@@ -47,12 +38,17 @@ void cocktail_sort_list(listint_t **list)
 			}
 			else
 				tmp = tmp->prev;
-			end--;
 		}
 		start++;
 	}
 }
-
+/**
+ *swap_nodes - a funtion that swaps two adjacent nodes.
+ *@head: the head the linked list.
+ *@a: the first node to be swaped.
+ *@b: the second node to be swaped.
+ *Return: void.
+ */
 void swap_nodes(listint_t **head, listint_t *a, listint_t *b)
 {
 	listint_t *tmp;
@@ -69,3 +65,21 @@ void swap_nodes(listint_t **head, listint_t *a, listint_t *b)
 	a->prev = b;
 	b->prev = tmp;
 }
+/**
+ *size_counter - a function that returns the size of the linked list.
+ *@head: the head pointer.
+ *Return: size of the linked list;
+ */
+int size_counter(listint_t **head)
+{
+	int size = 0;
+	listint_t *temp = *head;
+
+	while (temp->next)
+	{
+		temp = temp->next;
+		size++;
+	}
+	return (size);
+}
+
